@@ -28,6 +28,7 @@ The rich grammar
 Expr -> IfExpr
       | FunctionExpr
       | FuncApplication Expr Expr
+      | (Expr)
       | Literal
       | Identifier
       
@@ -46,7 +47,7 @@ The poor grammar
 
 ```
 t -> t t                    ; Function application
-   | [x : T]{t}             ; Lambda abstraction
+   | [x : T]t               ; Lambda abstraction
    | x                      ; Variable
    | true                   ; true literal
    | false                  ; false literal
